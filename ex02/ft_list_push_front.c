@@ -1,26 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_create_elem.c                                   :+:      :+:    :+:   */
+/*   ft_list_push_front.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seli <seli@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/03 15:39:14 by seli              #+#    #+#             */
-/*   Updated: 2018/10/03 16:10:18 by seli             ###   ########.fr       */
+/*   Created: 2018/10/03 15:59:59 by seli              #+#    #+#             */
+/*   Updated: 2018/10/03 16:00:13 by seli             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "ft_list.h"
-
-t_list	*ft_create_elem(void *data)
+void	ft_list_push_front(t_list **begin_list, void *data)
 {
-	t_list	*ptr;
 
-	ptr = malloc(sizeof(t_list));
-	if (ptr == NULL)
-		return (ptr);
-	ptr->data = data;
-	ptr->next = NULL;
-	return (ptr);
 }
