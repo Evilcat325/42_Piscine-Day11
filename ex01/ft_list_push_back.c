@@ -6,11 +6,10 @@
 /*   By: seli <seli@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/03 15:43:00 by seli              #+#    #+#             */
-/*   Updated: 2018/10/03 19:56:03 by seli             ###   ########.fr       */
+/*   Updated: 2018/10/03 20:15:01 by seli             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "ft_list.h"
 
 void	ft_list_push_back(t_list **begin_list, void *data)
@@ -18,11 +17,9 @@ void	ft_list_push_back(t_list **begin_list, void *data)
 	t_list	*head;
 	t_list	*end;
 
-	end = malloc(sizeof(t_list));
+	end = ft_create_elem(data);
 	if (end == 0 || !begin_list)
 		return ;
-	end->data = data;
-	end->next = 0;
 	if (!*begin_list)
 		*begin_list = end;
 	else
