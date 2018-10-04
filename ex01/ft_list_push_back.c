@@ -6,29 +6,30 @@
 /*   By: seli <seli@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/03 15:43:00 by seli              #+#    #+#             */
-/*   Updated: 2018/10/03 16:20:08 by seli             ###   ########.fr       */
+/*   Updated: 2018/10/03 19:56:03 by seli             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "ft_list.h"
 
 void	ft_list_push_back(t_list **begin_list, void *data)
 {
+	t_list	*head;
 	t_list	*end;
-	int		i;
 
 	end = malloc(sizeof(t_list));
-	if (end == 0)
+	if (end == 0 || !begin_list)
 		return ;
 	end->data = data;
 	end->next = 0;
-	if (!begin_list)
-		begin_list = &end;
+	if (!*begin_list)
+		*begin_list = end;
 	else
 	{
-		i = 0;
-		while (begin_list[i]->next)
-			i++;
-		begin_list[i]->next = end;
+		head = *begin_list;
+		while (head->next)
+			head = head->next;
+		head->next = end;
 	}
 }
