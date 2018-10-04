@@ -6,7 +6,7 @@
 /*   By: seli <seli@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/03 21:47:32 by seli              #+#    #+#             */
-/*   Updated: 2018/10/03 22:07:01 by seli             ###   ########.fr       */
+/*   Updated: 2018/10/03 22:15:22 by seli             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 void	ftx_swap(t_list **prev, t_list **head, t_list **next, int *updated)
 {
 	(*prev)->next = (*head)->next;
-	next = (*head)->next;
+	(*next) = (*head)->next;
 	(*head)->next = (*head)->next->next;
-	(*next)->next = head;
+	(*next)->next = (*head);
 	*updated = 1;
 }
 
